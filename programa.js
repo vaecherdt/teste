@@ -88,3 +88,17 @@ function editar() {
         }
     })
 }
+
+function marcarConcluido() {
+    listar()
+    rl.question("Qual lembrete você deseja marcar como concluído? ", (numeroDoLembrete) => {
+        if (lembretes.length >= numeroDoLembrete && numeroDoLembrete > 0) {
+            lembretes[numeroDoLembrete - 1].concluido = true
+            console.log("Lembrete marcado como concluído!")
+            executar()
+        } else {
+            console.log("Lembrete não encontrado")
+            executar()
+        }
+    })
+}
